@@ -2,8 +2,18 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
+app.set('view-engine', 'ejs');
+
 app.get('/', (req, res) => {
-    res.send('<h1>Welcome Everyone</h1>');
+    res.render('index.ejs');
+})
+
+app.get('/login', (req, res) => {
+    res.render('login.ejs');
+})
+
+app.get('/register', (req, res) => {
+    res.render('register.ejs');
 })
 
 app.listen(port, function(err){
